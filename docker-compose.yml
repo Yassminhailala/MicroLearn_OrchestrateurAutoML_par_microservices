@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # Metadata Store
+  postgres:
+    image: postgres:15
+    container_name: automl_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: ${POSTGRES_DB:-automl}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d automl" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Object Storage (S3 compatible)
+  minio:
+    image: minio/minio
+    container_name: automl_minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports:
+      - "9000:9000" # API
+      - "9001:9001" # Console
+    volumes:
+      - minio_data:/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "mc ready local" ] # Simplified check or remove if no mc
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Data Preparer Service
+  data_preparer:
+    build: ./services/data_preparer
+    container_name: automl_data_preparer
+    environment:
+      MINIO_ENDPOINT: "minio:9000"
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+      POSTGRES_HOST: "postgres"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "automl"
+    ports:
+      - "8001:8000" # Mapped to 8001 to avoid conflicts if we add more services
+    depends_on:
+      - postgres
+      - minio
+    networks:
+      - automl_network
+
+  # Frontend (Streamlit)
+  frontend:
+    build: ./services/frontend
+    container_name: automl_frontend
+    ports:
+      - "8501:8501"
+    environment:
+      API_URL: "http://data_preparer:8000"
+      MINIO_ENDPOINT: "minio:9000"
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+    depends_on:
+      - data_preparer
+    networks:
+      - automl_network
+
+volumes:
+  postgres_data:
+  minio_data:
+
+
+networks:
+  automl_network:
+    driver: bridge
