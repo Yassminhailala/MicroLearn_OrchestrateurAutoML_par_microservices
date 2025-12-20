@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+pandas
+# scikit-learn and pycaret for potential future use or if selector uses their types, 
+# but for deterministic logic we mainly need standard types. 
+# Keeping them as requested by user ("Technologies : Python + scikit-learn + PyCaret").
+scikit-learn
+pycaret
+python-multipart
+requests

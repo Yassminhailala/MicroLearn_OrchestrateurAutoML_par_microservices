@@ -62,6 +62,40 @@ services:
     networks:
       - automl_network
 
+  # Model Selector Service
+  model_selector:
+    build: ./services/model_selector
+    container_name: automl_model_selector
+    environment:
+      POSTGRES_HOST: "model_selector_db"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "model_selector"
+    ports:
+      - "8002:8000"
+    depends_on:
+      - model_selector_db
+    networks:
+      - automl_network
+
+  # Model Selector Database (Independent)
+  model_selector_db:
+    image: postgres:15
+    container_name: automl_model_selector_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: "model_selector"
+    volumes:
+      - model_selector_postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d model_selector" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # Frontend (Streamlit)
   frontend:
     build: ./services/frontend
@@ -70,17 +104,20 @@ services:
       - "8501:8501"
     environment:
       API_URL: "http://data_preparer:8000"
+      MODEL_SELECTOR_URL: "http://model_selector:8000"
       MINIO_ENDPOINT: "minio:9000"
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
     depends_on:
       - data_preparer
+      - model_selector
     networks:
       - automl_network
 
 volumes:
   postgres_data:
   minio_data:
+  model_selector_postgres_data:
 
 
 networks:
