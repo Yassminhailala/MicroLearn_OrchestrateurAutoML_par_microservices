@@ -88,6 +88,7 @@ def prepare_data(request: PreparationRequest, background_tasks: BackgroundTasks,
     
     return {
         "job_id": job_id,
+        "dataset_id": job_id, # Strict alias for clarity
         "status": "PENDING",
         "output_location": None
     }

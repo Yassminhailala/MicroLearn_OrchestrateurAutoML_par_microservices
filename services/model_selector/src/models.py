@@ -9,6 +9,9 @@ class ModelSelectionLog(Base):
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     timestamp = Column(DateTime(timezone=True), server_default=func.now())
     dataset_name = Column(String, index=True)
+    dataset_id = Column(String, index=True)
+    target_column = Column(String)
+    evaluation_metrics = Column(String)
     task_type = Column(String) # classification, regression, etc.
     dataset_size = Column(String) # small, medium, large
     shape_rows = Column(Integer)

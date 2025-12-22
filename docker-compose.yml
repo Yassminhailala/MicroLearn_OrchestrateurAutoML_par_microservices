@@ -86,6 +86,8 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
       POSTGRES_DB: "model_selector"
+    ports:
+      - "5433:5432"
     volumes:
       - model_selector_postgres_data:/var/lib/postgresql/data
     networks:
@@ -105,12 +107,183 @@ services:
     environment:
       API_URL: "http://data_preparer:8000"
       MODEL_SELECTOR_URL: "http://model_selector:8000"
+      TRAINER_API_URL: "http://trainer:8000"
       MINIO_ENDPOINT: "minio:9000"
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
     depends_on:
       - data_preparer
       - model_selector
+      - trainer
+    networks:
+      - automl_network
+
+  # MLflow Tracking Server
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.8.1
+    container_name: automl_mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      - MLFLOW_BACKEND_STORE_URI=sqlite:///mlflow.db
+      - MLFLOW_ARTIFACT_ROOT=s3://mlflow/
+      - AWS_ACCESS_KEY_ID=minioadmin
+      - AWS_SECRET_ACCESS_KEY=minioadmin
+      - MLFLOW_S3_ENDPOINT_URL=http://minio:9000
+    depends_on:
+      - minio
+    networks:
+      - automl_network
+
+  # Trainer Microservice
+  trainer:
+    build: ./services/trainer
+    container_name: automl_trainer
+    environment:
+      MINIO_ENDPOINT: "minio:9000"
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
+      MODEL_SELECTOR_URL: "http://model_selector:8000"
+      POSTGRES_HOST: "trainer_db"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "trainer"
+    ports:
+      - "8003:8000"
+    depends_on:
+      - minio
+      - mlflow
+      - trainer_db
+    networks:
+      - automl_network
+
+  # Trainer Database
+  trainer_db:
+    image: postgres:15
+    container_name: automl_trainer_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: "trainer"
+    ports:
+      - "5434:5432"
+    volumes:
+      - trainer_postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d trainer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Evaluator Microservice
+  evaluator:
+    build: ./services/evaluator
+    container_name: automl_evaluator
+    environment:
+      MINIO_ENDPOINT: "minio:9000"
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+      POSTGRES_HOST: "evaluator_db"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "evaluator"
+      # Trainer DB connection (read-only)
+      TRAINER_POSTGRES_HOST: "trainer_db"
+      TRAINER_POSTGRES_USER: "user"
+      TRAINER_POSTGRES_PASSWORD: "password"
+      TRAINER_POSTGRES_DB: "trainer"
+    ports:
+      - "8004:8000"
+    depends_on:
+      - minio
+      - evaluator_db
+      - trainer_db
+    networks:
+      - automl_network
+
+  # Evaluator Database
+  evaluator_db:
+    image: postgres:15
+    container_name: automl_evaluator_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: "evaluator"
+    ports:
+      - "5435:5432"
+    volumes:
+      - evaluator_postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d evaluator" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Database Viewer (Adminer)
+
+  adminer:
+    image: adminer
+    container_name: automl_adminer
+    ports:
+      - "8081:8080"
+    networks:
+      - automl_network
+    depends_on:
+      - postgres
+      - model_selector_db
+      - trainer_db
+      - evaluator_db
+      - hyperopt_db
+
+  # HyperOpt Service
+  hyperopt:
+    build: ./services/hyperopt
+    container_name: automl_hyperopt
+    environment:
+      POSTGRES_HOST: "hyperopt_db"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "hyperopt"
+      REDIS_HOST: "hyperopt_redis"
+    ports:
+      - "8005:8000"
+    depends_on:
+      - hyperopt_db
+      - hyperopt_redis
+    networks:
+      - automl_network
+
+  # HyperOpt Database
+  hyperopt_db:
+    image: postgres:15
+    container_name: automl_hyperopt_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: "hyperopt"
+    ports:
+      - "5436:5432"
+    volumes:
+      - hyperopt_postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d hyperopt" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for HyperOpt Queue
+  hyperopt_redis:
+    image: redis:alpine
+    container_name: automl_hyperopt_redis
+    ports:
+      - "6380:6379"
     networks:
       - automl_network
 
@@ -118,6 +291,9 @@ volumes:
   postgres_data:
   minio_data:
   model_selector_postgres_data:
+  trainer_postgres_data:
+  evaluator_postgres_data:
+  hyperopt_postgres_data:
 
 
 networks:

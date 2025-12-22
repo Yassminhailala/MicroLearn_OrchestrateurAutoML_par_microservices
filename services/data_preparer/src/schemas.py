@@ -16,5 +16,6 @@ class PreparationRequest(BaseModel):
 
 class PreparationResponse(BaseModel):
     job_id: str
+    dataset_id: str
     status: str
     output_location: Optional[DataLocation] = None

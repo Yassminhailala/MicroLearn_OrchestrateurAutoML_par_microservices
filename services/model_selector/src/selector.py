@@ -1,67 +1,79 @@
 from typing import List
-from .schemas import DatasetMetadata, ModelCandidate
+from pydantic import BaseModel
+
+# Internal model for selection logic (not exposed via API)
+class ModelCandidate(BaseModel):
+    model_name: str
+    justification: str
+    priority: int
 
 class ModelSelector:
     @staticmethod
-    def select_models(metadata: DatasetMetadata) -> List[ModelCandidate]:
+    def select_models(task_type: str, rows: int, cols: int, metrics: List[str]) -> List[ModelCandidate]:
         candidates = []
         
         # 1. Image Data
-        if metadata.task_type.lower() == "image":
+        if task_type.lower() == "image":
             candidates.append(ModelCandidate(
-                model_name="Recall CNN (Custom)",
+                model_name="Recall CNN",
                 justification="Image data detected. CNNs are state-of-the-art for visual tasks.",
                 priority=1
             ))
+            candidates.append(ModelCandidate(
+                model_name="ResNet50",
+                justification="ResNet50 is a powerful deep learning model for image classification with residual learning.",
+                priority=2
+            ))
             return candidates
 
-        # 2. Tabular Data (Classification/Regression assumed for now if not image)
-        # Size definitions
-        is_small = metadata.rows < 1000
-        is_medium = 1000 <= metadata.rows < 50000
-        is_large = metadata.rows >= 50000
+        # 2. Tabular Data
+        is_small = rows < 1000
+        is_medium = 1000 <= rows < 50000
+        is_large = rows >= 50000
         
-        # Rule 1: Small Dataset -> SVM
+        # Determine prefix based on task
+        suffix = "Classifier" if task_type == "Classification" else "Regressor"
+        
+        # Logic Table
         if is_small:
+            # Small Dataset
             candidates.append(ModelCandidate(
-                model_name="SVM (Support Vector Machine)",
-                justification="Dataset is small (<1k rows). SVMs are efficient and effective for small, high-dimensional spaces.",
-                priority=1
-            ))
-            # Also suggest Random Forest as a robust alternative
-            candidates.append(ModelCandidate(
-                model_name="RandomForest",
-                justification="Robust baseline for tabular data.",
-                priority=2
-            ))
-
-        # Rule 2: Medium Dataset -> Random Forest
-        elif is_medium:
-            candidates.append(ModelCandidate(
-                model_name="RandomForest",
-                justification="Dataset is medium sized (1k-50k rows). RandomForest balances performance and interpretability well here.",
+                model_name=f"SVM {suffix}",
+                justification=f"Dataset is small ({rows} rows). SVMs work well in high-dimensional spaces with limited samples.",
                 priority=1
             ))
             candidates.append(ModelCandidate(
-                model_name="XGBoost",
-                justification="Boosting often outperforms bagging on structured data, worth trying.",
-                priority=2
-            ))
-
-        # Rule 3: Large Dataset -> XGBoost
-        elif is_large:
-            candidates.append(ModelCandidate(
-                model_name="XGBoost",
-                justification="Dataset is large (>50k rows). Gradient boosting scales well and provides high accuracy.",
-                priority=1
-            ))
-            # Neural Net for large tabular is also an option, but let's stick to the requested list
-            candidates.append(ModelCandidate(
-                model_name="RandomForest",
-                justification="Parallelizable training makes it a viable candidate for large datasets too.",
+                model_name=f"RandomForest {suffix}",
+                justification="Robust baseline that resists overfitting on small data.",
                 priority=2
             ))
             
+        elif is_medium:
+             # Medium Dataset
+            candidates.append(ModelCandidate(
+                model_name=f"RandomForest {suffix}",
+                justification=f"Dataset is medium sized ({rows} rows). RandomForest offers a great balance of accuracy and interpretability.",
+                priority=1
+            ))
+            candidates.append(ModelCandidate(
+                model_name=f"XGBoost {suffix}",
+                justification="Gradient Boosting often provides state-of-the-art performance on structured data.",
+                priority=2
+            ))
+            
+        elif is_large:
+            # Large Dataset
+            candidates.append(ModelCandidate(
+                model_name=f"XGBoost {suffix}",
+                justification=f"Dataset is large ({rows} rows). XGBoost is highly optimized for performance and speed on large datasets.",
+                priority=1
+            ))
+            candidates.append(ModelCandidate(
+                model_name=f"LightGBM {suffix}",
+                justification="Faster training speed and lower memory usage for very large datasets.",
+                priority=2
+            ))
+
         return candidates
 
 selector = ModelSelector()
