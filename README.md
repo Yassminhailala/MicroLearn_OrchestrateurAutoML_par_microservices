@@ -60,24 +60,27 @@ Lancer les services :
 docker-compose up --build
 
 Accéder à l’interface Streamlit via le port configuré (ex. http://localhost:8501).
-📸 Captures d’écran:![capt18](https://github.com/user-attachments/assets/54386a8c-5d1e-4890-8b8c-0ff1e1e12ef6)
-![capt17](https://github.com/user-attachments/assets/a91148a7-7367-4bef-aad0-50d9a779c31f)
-![Capt16](https://github.com/user-attachments/assets/f1b5a90c-44a7-44c1-a04c-1d66939077e2)
-![capt15](https://github.com/user-attachments/assets/c7711502-01dd-4a3a-a47e-3d3ed3e858f1)
-![capt14](https://github.com/user-attachments/assets/167057bf-4b82-4e47-af88-1fb7a6db1c74)
-![capt13](https://github.com/user-attachments/assets/832065fe-aa3b-481f-b599-dc00e9e79576)
-![capt12](https://github.com/user-attachments/assets/42c5f7ff-4b4d-4e9d-958b-1f26045ac548)
-![capt11](https://github.com/user-attachments/assets/f4cbfd76-104d-410c-bb79-9e469c2359ef)
-![capt10](https://github.com/user-attachments/assets/028aa936-bfe2-4910-96a7-bd344a5333a7)
-![capt9](https://github.com/user-attachments/assets/04982c7c-87b6-456c-ad34-80a744a16ef6)
-![capt8](https://github.com/user-attachments/assets/1ffd1f1c-70fc-409a-bc80-e41e5cd71901)
-![capt7](https://github.com/user-attachments/assets/d6aa1c35-057f-4034-b204-5f428ae3a4b8)
-![capt6](https://github.com/user-attachments/assets/b96cfa43-2cf6-405f-9cc4-53bfa4fbf222)
-![capt5](https://github.com/user-attachments/assets/d270d63f-eea8-45d1-83dc-df6c4726ec85)
-![capt4](https://github.com/user-attachments/assets/34c32113-dbed-4ad2-960b-cae12b49dc34)
-![capt3](https://github.com/user-attachments/assets/9e6d7277-5995-49c7-8155-cd05724fb583)
-![capt2](https://github.com/user-attachments/assets/0defb3df-d16b-44c8-874c-57080ce1dd87)
-![capt1](https://github.com/user-attachments/assets/115b8e08-fa39-441a-a904-27ba542e21e4)
+📸 Captures d’écran:!
+
+
+![capt18](https://github.com/user-attachments/assets/beeb78aa-3263-4165-b447-a3e623d6a28f)
+![capt17](https://github.com/user-attachments/assets/a3f6418c-54b0-47bf-b982-c23187652470)
+![Capt16](https://github.com/user-attachments/assets/2b67625e-8e70-47bb-b484-a2cddaeb516b)
+![capt15](https://github.com/user-attachments/assets/bcf3772c-3a94-465d-bd1d-9e0a472d601a)
+![capt14](https://github.com/user-attachments/assets/1fecb7dc-bcbc-4860-9efd-f4c4e5391f2c)
+![capt13](https://github.com/user-attachments/assets/00ada7e8-aabf-402f-aff7-afe7e337fcf5)
+![capt12](https://github.com/user-attachments/assets/1af13dc2-dcae-4234-a76d-36280104865c)
+![capt11](https://github.com/user-attachments/assets/33e46430-dce0-48a7-b7c6-431302de0ebc)
+![capt10](https://github.com/user-attachments/assets/6b5c3e18-9d20-4cdd-abac-dbbffebec6d2)
+![capt9](https://github.com/user-attachments/assets/4be03679-62e9-4f6f-a657-c1f975dfa3f9)
+![capt8](https://github.com/user-attachments/assets/7cf22a18-aad0-4373-99a8-1d7189e5e1d8)
+![capt7](https://github.com/user-attachments/assets/ea202419-43a1-4842-99d2-0fe342882f39)
+![capt6](https://github.com/user-attachments/assets/b2d1d8ef-dd4a-481f-826f-f26f562e3c80)
+![capt5](https://github.com/user-attachments/assets/a4c199fb-6f03-4dc1-8a3b-2a5546c83862)
+![capt4](https://github.com/user-attachments/assets/804b17d8-1c67-4cfc-b536-9b745ee109fe)
+![capt3](https://github.com/user-attachments/assets/ffd8e833-5443-41ef-9d13-aa01f957232f)
+![capt2](https://github.com/user-attachments/assets/dcc585c6-b893-4bb7-ae8c-ed8db494f0cf)
+![capt1](https://github.com/user-attachments/assets/b0ff69fa-ac6f-443d-b961-0784e11f88cd)
 
 
 
