@@ -1,65 +1,133 @@
-OrchestrateurAutoML - Architecture Microservices
+🤖 OrchestrateurAutoML
+Plateforme AutoML Distribuée – Architecture Microservices
 
-OrchestrateurAutoML est une plateforme AutoML distribuée et modulaire, conçue pour automatiser l’intégralité du cycle de vie d’un modèle de machine learning, depuis la préparation des données jusqu’à l’évaluation finale.
+OrchestrateurAutoML est une plateforme AutoML modulaire et scalable, conçue pour automatiser l’ensemble du cycle de vie d’un modèle de Machine Learning, de la préparation des données jusqu’à l’évaluation finale des performances.
+
+Elle permet de transformer des données brutes en modèles performants avec un minimum d’intervention humaine, tout en respectant les bonnes pratiques MLOps.
 
 🚀 Vue d’ensemble
 
-Cette solution permet aux utilisateurs de transformer des données brutes en modèles performants avec un minimum d’intervention manuelle.
-Grâce à une architecture microservices, chaque composant est indépendant, scalable et communique via des APIs REST.
+Automatisation complète du pipeline Machine Learning
 
-🏗️ Architecture
+Architecture microservices indépendante et scalable
 
-Le système est composé de plusieurs microservices coordonnés :
+Communication inter-services via APIs REST
 
-Frontend (Streamlit) : Interface utilisateur intuitive pour le chargement des données, la configuration des entraînements et la visualisation des résultats.
+Support du calcul distribué et des GPU
 
-Data Preparer : Nettoyage, prétraitement et extraction automatique des métadonnées des datasets.
+Suivi et versionnage des expériences et modèles
 
-Model Selector : Recommande les meilleurs modèles (XGBoost, RandomForest, CNN, etc.) en fonction des caractéristiques du dataset.
+🏗️ Architecture Générale
 
-Trainer : Gère l’entraînement distribué des modèles avec PyTorch et Ray, avec support GPU.
+Le système repose sur plusieurs microservices coordonnés, chacun ayant une responsabilité bien définie :
 
-HyperOpt : Service d’optimisation des hyperparamètres pour maximiser la performance des modèles.
+🔹 Frontend
 
-Evaluator : Évaluation approfondie des performances et comparaison des modèles entraînés.
+Streamlit
 
-MLflow : Serveur de tracking pour le suivi des expériences et le versionnage des modèles.
+Interface utilisateur pour :
 
-MinIO : Stockage d’objets (S3-compatible) pour les datasets et artefacts de modèles.
+Chargement des datasets
+
+Configuration des entraînements
+
+Visualisation des métriques et résultats
+
+🔹 Data Preparer
+
+Nettoyage automatique des données
+
+Prétraitement (encoding, normalisation, etc.)
+
+Extraction des métadonnées du dataset
+
+🔹 Model Selector
+
+Sélection intelligente des modèles adaptés au dataset :
+
+RandomForest
+
+XGBoost
+
+CNN
+
+Autres architectures ML / DL
+
+🔹 Trainer
+
+Entraînement distribué avec PyTorch et Ray
+
+Support CPU / GPU
+
+Gestion des jobs d’entraînement
+
+🔹 HyperOpt
+
+Optimisation automatique des hyperparamètres
+
+Maximisation des performances des modèles
+
+🔹 Evaluator
+
+Évaluation avancée des performances
+
+Comparaison des modèles entraînés
+
+Génération de métriques et rapports
+
+🔹 MLflow
+
+Tracking des expériences
+
+Versionnage des modèles
+
+Centralisation des métriques et artefacts
+
+🔹 MinIO
+
+Stockage objet S3-compatible
+
+Datasets, modèles et artefacts d’entraînement
 
 🛠️ Stack Technique
+Catégorie	Technologies
+Langage	Python 3.9+
+Framework Web	FastAPI, Uvicorn
+Machine Learning	PyTorch, Scikit-Learn, Ray, Pandas
+MLOps & Tracking	MLflow
+Base de données	PostgreSQL (une instance par service)
+Stockage & Cache	MinIO, Redis
+Interface Utilisateur	Streamlit
+Conteneurisation	Docker, Docker Compose
+🔧 Installation & Lancement
+✅ Prérequis
 
-Langage : Python 3.9+
+Docker
 
-Frameworks Web : FastAPI, Uvicorn
+Docker Compose
 
-Machine Learning : PyTorch, Scikit-Learn, Ray, Pandas
-
-Tracking & MLOps : MLflow
-
-Base de données : PostgreSQL (instances dédiées par service)
-
-Stockage & Cache : MinIO, Redis
-
-Interface : Streamlit
-
-Conteneurisation : Docker, Docker Compose
-
-🔧 Installation et Lancement
-
-Prérequis : Docker et Docker Compose installés sur votre machine.
-
-Cloner le dépôt :
-
+📥 Cloner le dépôt
 git clone <URL_DU_DEPOT>
 cd OrchestrateurAutoML
 
-
-Lancer les services :
-
+▶️ Lancer la plateforme
 docker-compose up --build
 
-Accéder à l’interface Streamlit via le port configuré (ex. http://localhost:8501).
+🌐 Accès à l’interface
+
+Interface Streamlit :
+http://localhost:8501
+ (port configurable)
+
+📌 Objectifs du Projet
+
+Simplifier l’utilisation de l’AutoML
+
+Favoriser la reproductibilité des expériences
+
+Offrir une architecture robuste, modulaire et extensible
+
+Intégrer les bonnes pratiques MLOps dès la conception
 📸 Captures d’écran:!
 
 
