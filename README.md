@@ -128,6 +128,9 @@ Favoriser la reproductibilité des expériences
 Offrir une architecture robuste, modulaire et extensible
 
 Intégrer les bonnes pratiques MLOps dès la conception
+
+
+
 📸 Captures d’écran:!
 
 
