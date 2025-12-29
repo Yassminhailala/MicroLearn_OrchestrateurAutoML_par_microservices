@@ -105,10 +105,11 @@ Fine-tune the selected model using advanced optimization strategies.
 Deploy the best model in one click as a TorchServe REST API.
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 🏗️ Architecture Overview!
+
 <img width="764" height="444" alt="Arch1" src="https://github.com/user-attachments/assets/8ab13945-345a-4297-b7cc-c20f34ca990e" />
 
 
-[architecture microservices ](https://github.com/user-attachments/assets/158e03d1-baae-40a1-a669-2f25a7cee999)
+
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Video de simulation :
