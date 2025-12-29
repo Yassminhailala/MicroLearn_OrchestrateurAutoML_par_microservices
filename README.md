@@ -8,11 +8,11 @@ Why This Project Exists
 
 Most AutoML tools are either:
 
-Monolithic and hard to scale
+-Monolithic and hard to scale
 
-Opaque (no control over training decisions)
+-Opaque (no control over training decisions)
 
-Research-only, not production-ready
+-Research-only, not production-ready
 
 This project was built to answer a different question:
 
@@ -20,43 +20,43 @@ How would you design AutoML as a real production system, not a notebook?
 
 The result is a microservices-based AutoML platform focused on:
 
-Scalability
+-Scalability
 
-Observability
+-Observability
 
-Reproducibility
+-Reproducibility
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
 🛠️ Technology Stack
 Core Technologies
 
-Backend: Python (Flask, PyTorch, Scikit-learn, Ray)
+-Backend: Python (Flask, PyTorch, Scikit-learn, Ray)
 
-Frontend: Streamlit
+-Frontend: Streamlit
 
-Infrastructure & MLOps
+-Infrastructure & MLOps
 
-Object Storage: MinIO (S3-Compatible)
+-Object Storage: MinIO (S3-Compatible)
 
-Experiment Tracking: MLflow
+-Experiment Tracking: MLflow
 
-Database: PostgreSQL (one isolated instance per service)
+-Database: PostgreSQL (one isolated instance per service)
 
-Message Broker: NATS
+-Message Broker: NATS
 
-Cache / Task Queue: Redis
+-Cache / Task Queue: Redis
 
-DevOps
+-DevOps
 
-Containerization: Docker, Docker Compose
+-Containerization: Docker, Docker Compose
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 Prerequisites
 
-Docker & Docker Compose
+-Docker & Docker Compose
 
-8 GB RAM (minimum)
+-8 GB RAM (minimum)
 
-16 GB RAM (recommended)
+-16 GB RAM (recommended)
 
 Installation
 Clone the repository:
