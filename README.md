@@ -58,19 +58,13 @@ Fine-tune the selected model using advanced optimization strategies.
 📦 Model Deployment
 Deploy the best model in one click as a TorchServe REST API.
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
-📂 Project Structure
-.
-├── services/
-│   ├── data_preparer/    # Python / Flask
-│   ├── model_selector/   # Python / Flask
-│   ├── trainer/          # Python / PyTorch / Ray
-│   ├── evaluator/        # Python / Plotly
-│   ├── hyperopt/         # Python / Optuna / Redis
-│   ├── deployer/         # Python / TorchServe
-│   ├── orchestrator/     # Node.js / TypeScript
-│   └── frontend/         # Streamlit
-├── deployments/          # Local & production deployment artifacts
-└── docker-compose.yml    # Multi-service orchestration
-_____________________________________________________________________________________________________________________________________________________________________________________________________________
 🏗️ Architecture Overview!
+
 [architecture microservices ](https://github.com/user-attachments/assets/158e03d1-baae-40a1-a669-2f25a7cee999)
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Video de simulation :
+https://youtu.be/SE2k13j0OL8?si=JzJVKHaA2Ls_DdfA
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
+
