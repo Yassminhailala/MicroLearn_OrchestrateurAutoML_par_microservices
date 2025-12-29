@@ -30,12 +30,18 @@ ________________________________________________________________________________
 Prerequisites
 
 Docker & Docker Compose
+
 8 GB RAM (minimum)
+
 16 GB RAM (recommended)
+
 Installation
 Clone the repository:
+
 git clone MicroLearn_OrchestrateurAutoML_par_microservices
+
 cd distributed-automl-platform
+
 Launch all services:
 docker-compose up -d --build
 
