@@ -4,6 +4,29 @@ A powerful, modular, and distributed AutoML platform built on a microservices ar
 This platform enables users to upload datasets, receive AI-driven model recommendations, perform automated hyperparameter optimization, and deploy models as production-ready REST APIs.
 The system is designed with scalability, reproducibility, and MLOps best practices in mind.
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
+Why This Project Exists
+
+Most AutoML tools are either:
+
+Monolithic and hard to scale
+
+Opaque (no control over training decisions)
+
+Research-only, not production-ready
+
+This project was built to answer a different question:
+
+How would you design AutoML as a real production system, not a notebook?
+
+The result is a microservices-based AutoML platform focused on:
+
+Scalability
+
+Observability
+
+Reproducibility
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
+
 🛠️ Technology Stack
 Core Technologies
 
