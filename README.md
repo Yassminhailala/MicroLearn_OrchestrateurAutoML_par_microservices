@@ -6,15 +6,25 @@ The system is designed with scalability, reproducibility, and MLOps best practic
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 🛠️ Technology Stack
 Core Technologies
+
 Backend: Python (Flask, PyTorch, Scikit-learn, Ray)
+
 Frontend: Streamlit
+
 Infrastructure & MLOps
+
 Object Storage: MinIO (S3-Compatible)
+
 Experiment Tracking: MLflow
+
 Database: PostgreSQL (one isolated instance per service)
+
 Message Broker: NATS
+
 Cache / Task Queue: Redis
+
 DevOps
+
 Containerization: Docker, Docker Compose
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 Prerequisites
