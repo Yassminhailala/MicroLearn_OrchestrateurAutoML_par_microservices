@@ -49,6 +49,11 @@ Access the frontend:
 http://localhost:8501
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
+📂 Project Structure:
+<img width="327" height="158" alt="image" src="https://github.com/user-attachments/assets/5f63da75-c426-491a-81b8-6c5933e1b574" />
+
+________________________________________________________________________________________________________________________________________________________________________________________
+
 🔄 Automated Workflow
 The platform provides a fully automated data and model flow — no manual ID copying between steps.
 
