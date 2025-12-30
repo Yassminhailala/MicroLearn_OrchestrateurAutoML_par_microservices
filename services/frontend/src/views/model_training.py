@@ -16,12 +16,9 @@ def model_training_page():
     # 1. Input Section
     st.markdown('<div class="section-header"><span>1</span> Trace Job</div>', unsafe_allow_html=True)
     
-    # Auto-fill from session
-    default_job_id = st.session_state.get("current_job_id", "")
-    
     job_id = st.text_input(
         "Enter Batch ID or Job ID",
-        value=default_job_id,
+        value=st.session_state.get("shared_job_id", ""),
         help="Paste the ID returned after launching training"
     )
 
@@ -30,7 +27,7 @@ def model_training_page():
             st.warning("Please enter a Job ID.")
             return
 
-        st.session_state["current_job_id"] = job_id
+        st.session_state["shared_job_id"] = job_id
         
         # 2. Monitoring Section
         st.markdown('<div class="section-header"><span>2</span> Real-time Status</div>', unsafe_allow_html=True)
@@ -72,6 +69,10 @@ def model_training_page():
                     elif status == "completed":
                         st.success(f"✅ **Status:** Entraînement terminé (Completed)!")
                         st.balloons()
+                        
+                        # Export for Deployment automation if it's a single model job
+                        if type_ == "job":
+                            st.session_state["shared_model_id"] = job_id
                         
                         # Fetch Results
                         result_res = requests.get(f"{TRAINER_API_URL}/train/result/{job_id}")

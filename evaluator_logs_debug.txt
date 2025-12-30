@@ -1,0 +1,100 @@
+﻿automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job 3d05e25a-5a03-4c57-91ec-69c1e4f55def ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=hyperopt_b22d3b29-1b82-428b-b768-f0d0f0b2f636, model=ce7c5ed4-995a-49a0-9cbf-8cc5ceef923c, dataset=ecb96251-704b-476c-ad75-9f0adce0af4c, target=city
+automl_evaluator  | INFO:src.evaluator_logic:Job 3d05e25a-5a03-4c57-91ec-69c1e4f55def status updated to running
+automl_evaluator  | INFO:     172.23.0.12:36030 - "GET /status/3d05e25a-5a03-4c57-91ec-69c1e4f55def HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: ce7c5ed4-995a-49a0-9cbf-8cc5ceef923c
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job ce7c5ed4-995a-49a0-9cbf-8cc5ceef923c
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | /usr/local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning:
+automl_evaluator  | 
+automl_evaluator  | Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+automl_evaluator  | 
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation 3d05e25a-5a03-4c57-91ec-69c1e4f55def completed successfully.
+automl_evaluator  | INFO:     172.23.0.12:36042 - "GET /status/3d05e25a-5a03-4c57-91ec-69c1e4f55def HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.12:36052 - "GET /results/3d05e25a-5a03-4c57-91ec-69c1e4f55def HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/ce87404f-b58e-45de-8c7f-1888f57e5b92
+automl_evaluator  | INFO:src.main:Received metadata for ce87404f-b58e-45de-8c7f-1888f57e5b92: {'status': 'completed', 'model_type': None, 'data_id': None, 'target_column': None, 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for ce87404f-b58e-45de-8c7f-1888f57e5b92: dataset_id=ecb96251-704b-476c-ad75-9f0adce0af4c, target_column=city
+automl_evaluator  | INFO:src.main:Creating job b1b2c069-8b3c-449e-8dba-9de2451602f0 for model ce87404f-b58e-45de-8c7f-1888f57e5b92 with dataset ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:36064 - "POST /evaluate HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job b1b2c069-8b3c-449e-8dba-9de2451602f0 ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=hyperopt_b22d3b29-1b82-428b-b768-f0d0f0b2f636, model=ce87404f-b58e-45de-8c7f-1888f57e5b92, dataset=ecb96251-704b-476c-ad75-9f0adce0af4c, target=city
+automl_evaluator  | INFO:src.evaluator_logic:Job b1b2c069-8b3c-449e-8dba-9de2451602f0 status updated to running
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:36068 - "GET /status/b1b2c069-8b3c-449e-8dba-9de2451602f0 HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: ce87404f-b58e-45de-8c7f-1888f57e5b92
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job ce87404f-b58e-45de-8c7f-1888f57e5b92
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | /usr/local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning:
+automl_evaluator  | 
+automl_evaluator  | Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+automl_evaluator  | 
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation b1b2c069-8b3c-449e-8dba-9de2451602f0 completed successfully.
+automl_evaluator  | INFO:     172.23.0.12:36074 - "GET /status/b1b2c069-8b3c-449e-8dba-9de2451602f0 HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.12:36086 - "GET /results/b1b2c069-8b3c-449e-8dba-9de2451602f0 HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/59871b6a-a98c-4f99-aacb-e1bed3a17a56
+automl_evaluator  | INFO:src.main:Received metadata for 59871b6a-a98c-4f99-aacb-e1bed3a17a56: {'status': 'completed', 'model_type': None, 'data_id': None, 'target_column': None, 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for 59871b6a-a98c-4f99-aacb-e1bed3a17a56: dataset_id=ecb96251-704b-476c-ad75-9f0adce0af4c, target_column=city
+automl_evaluator  | INFO:src.main:Creating job b96064c2-0b39-468c-9806-3b746e73004a for model 59871b6a-a98c-4f99-aacb-e1bed3a17a56 with dataset ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:35568 - "POST /evaluate HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job b96064c2-0b39-468c-9806-3b746e73004a ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=hyperopt_b22d3b29-1b82-428b-b768-f0d0f0b2f636, model=59871b6a-a98c-4f99-aacb-e1bed3a17a56, dataset=ecb96251-704b-476c-ad75-9f0adce0af4c, target=city
+automl_evaluator  | INFO:src.evaluator_logic:Job b96064c2-0b39-468c-9806-3b746e73004a status updated to running
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:35576 - "GET /status/b96064c2-0b39-468c-9806-3b746e73004a HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: 59871b6a-a98c-4f99-aacb-e1bed3a17a56
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job 59871b6a-a98c-4f99-aacb-e1bed3a17a56
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | /usr/local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning:
+automl_evaluator  | 
+automl_evaluator  | Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+automl_evaluator  | 
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation b96064c2-0b39-468c-9806-3b746e73004a completed successfully.
+automl_evaluator  | INFO:     172.23.0.12:35592 - "GET /status/b96064c2-0b39-468c-9806-3b746e73004a HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.12:35602 - "GET /results/b96064c2-0b39-468c-9806-3b746e73004a HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/f88f8c5f-22cf-428d-801c-b8290a29f573
+automl_evaluator  | INFO:src.main:Received metadata for f88f8c5f-22cf-428d-801c-b8290a29f573: {'status': 'completed', 'model_type': None, 'data_id': None, 'target_column': None, 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for f88f8c5f-22cf-428d-801c-b8290a29f573: dataset_id=ecb96251-704b-476c-ad75-9f0adce0af4c, target_column=city
+automl_evaluator  | INFO:src.main:Creating job 430ce99c-df3a-45dd-9b30-45f72ad1cd1c for model f88f8c5f-22cf-428d-801c-b8290a29f573 with dataset ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:35618 - "POST /evaluate HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job 430ce99c-df3a-45dd-9b30-45f72ad1cd1c ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=hyperopt_b22d3b29-1b82-428b-b768-f0d0f0b2f636, model=f88f8c5f-22cf-428d-801c-b8290a29f573, dataset=ecb96251-704b-476c-ad75-9f0adce0af4c, target=city
+automl_evaluator  | INFO:src.evaluator_logic:Job 430ce99c-df3a-45dd-9b30-45f72ad1cd1c status updated to running
+automl_evaluator  | INFO:     172.23.0.12:35630 - "GET /status/430ce99c-df3a-45dd-9b30-45f72ad1cd1c HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: f88f8c5f-22cf-428d-801c-b8290a29f573
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job f88f8c5f-22cf-428d-801c-b8290a29f573
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | /usr/local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning:
+automl_evaluator  | 
+automl_evaluator  | Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+automl_evaluator  | 
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation 430ce99c-df3a-45dd-9b30-45f72ad1cd1c completed successfully.
+automl_evaluator  | INFO:     172.23.0.12:35644 - "GET /status/430ce99c-df3a-45dd-9b30-45f72ad1cd1c HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.12:35654 - "GET /results/430ce99c-df3a-45dd-9b30-45f72ad1cd1c HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/afff8657-93f8-4294-838e-380afc9adf68
+automl_evaluator  | INFO:src.main:Received metadata for afff8657-93f8-4294-838e-380afc9adf68: {'status': 'completed', 'model_type': None, 'data_id': None, 'target_column': None, 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for afff8657-93f8-4294-838e-380afc9adf68: dataset_id=ecb96251-704b-476c-ad75-9f0adce0af4c, target_column=city
+automl_evaluator  | INFO:src.main:Creating job 91bb9496-69f1-4546-9931-f697e9f39112 for model afff8657-93f8-4294-838e-380afc9adf68 with dataset ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:     172.23.0.12:35666 - "POST /evaluate HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job 91bb9496-69f1-4546-9931-f697e9f39112 ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=hyperopt_b22d3b29-1b82-428b-b768-f0d0f0b2f636, model=afff8657-93f8-4294-838e-380afc9adf68, dataset=ecb96251-704b-476c-ad75-9f0adce0af4c, target=city
+automl_evaluator  | INFO:     172.23.0.12:35674 - "GET /status/91bb9496-69f1-4546-9931-f697e9f39112 HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Job 91bb9496-69f1-4546-9931-f697e9f39112 status updated to running
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: ecb96251-704b-476c-ad75-9f0adce0af4c
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: afff8657-93f8-4294-838e-380afc9adf68
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job afff8657-93f8-4294-838e-380afc9adf68
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | /usr/local/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning:
+automl_evaluator  | 
+automl_evaluator  | Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+automl_evaluator  | 
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation 91bb9496-69f1-4546-9931-f697e9f39112 completed successfully.
+automl_evaluator  | INFO:     172.23.0.12:52044 - "GET /status/91bb9496-69f1-4546-9931-f697e9f39112 HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.12:52058 - "GET /results/91bb9496-69f1-4546-9931-f697e9f39112 HTTP/1.1" 200 OK

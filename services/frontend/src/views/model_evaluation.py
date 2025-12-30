@@ -47,11 +47,11 @@ def model_evaluation_page():
                     experiment_id = batch_options[selected_display]
                 else:
                     st.warning("No training batches found. Please train models first in the 'Model Training' page.")
-                    experiment_id = st.text_input("Or enter Experiment ID manually", help="Paste a batch_job_id from training")
+                    experiment_id = st.text_input("Or enter Experiment ID manually", key="current_job_id", help="Paste a batch_job_id from training")
             else:
-                experiment_id = st.text_input("Experiment ID", help="Enter the batch_job_id from your training run")
+                experiment_id = st.text_input("Experiment ID", key="current_job_id", help="Enter the batch_job_id from your training run")
         except:
-            experiment_id = st.text_input("Experiment ID", help="Enter the batch_job_id from your training run")
+            experiment_id = st.text_input("Experiment ID", key="current_job_id", help="Enter the batch_job_id from your training run")
     
     with col2:
         task_type = st.selectbox("Task Type", ["classification", "regression"], help="Type of ML task")
@@ -213,6 +213,9 @@ def model_evaluation_page():
                         model_row = df_results[df_results["model_name"] == selected_model_name].iloc[0]
                         artifacts = model_row.get("artifacts", {})
                         eval_job_id = model_row.get("evaluation_job_id")
+                        
+                        # Export for Deployment automation
+                        st.session_state["last_trained_model_id"] = model_row.get("model_id")
                         
                         st.markdown(f"### 🎯 Focus: {selected_model_name}")
                         

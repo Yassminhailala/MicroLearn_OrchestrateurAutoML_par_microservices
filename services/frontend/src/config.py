@@ -6,6 +6,7 @@ MODEL_SELECTOR_URL = os.getenv("MODEL_SELECTOR_URL", "http://model_selector:8000
 TRAINER_API_URL = os.getenv("TRAINER_API_URL", "http://trainer:8000")
 EVALUATOR_API_URL = os.getenv("EVALUATOR_API_URL", "http://evaluator:8000")
 HYPEROPT_API_URL = os.getenv("HYPEROPT_API_URL", "http://hyperopt:8000")
+DEPLOYER_API_URL = os.getenv("DEPLOYER_API_URL", "http://deployer:8080")
 
 # MinIO Configuration
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "minio:9000")

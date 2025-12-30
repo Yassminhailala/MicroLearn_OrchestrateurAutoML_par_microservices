@@ -1,0 +1,73 @@
+﻿automl_hyperopt  | INFO:     Started server process [1]
+automl_hyperopt  | INFO:     Waiting for application startup.
+automl_hyperopt  | INFO:app.main:Database tables created successfully
+automl_hyperopt  | INFO:app.main:HyperOpt service starting up...
+automl_hyperopt  | INFO:     Application startup complete.
+automl_hyperopt  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+automl_hyperopt  | INFO:app.services.redis_queue:Job b22d3b29-1b82-428b-b768-f0d0f0b2f636 queued in Redis
+automl_hyperopt  | INFO:     172.23.0.9:40568 - "POST /optimize HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:39,153] A new study created in memory with name: no-name-d266de25-1050-4251-9ac4-782c0c84227b
+automl_hyperopt  | INFO:     172.23.0.9:35080 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:43,318] Trial 0 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:35092 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:35108 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:47,489] Trial 1 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:35110 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58740 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58750 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:51,633] Trial 2 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:58758 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58764 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58780 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58794 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58804 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:55,816] Trial 3 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:58806 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58808 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58818 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:58830 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:42:59,996] Trial 4 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:53182 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53196 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53202 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53216 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53232 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53244 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53250 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53254 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53260 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:43:04,143] Trial 5 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:53270 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53272 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53276 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53286 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53294 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53304 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:43:08,298] Trial 6 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:53316 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53324 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53332 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53342 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:53350 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47300 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47312 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47322 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47328 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47330 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:43:12,506] Trial 7 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:47334 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47340 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47352 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47356 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47372 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:43:16,697] Trial 8 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:     172.23.0.9:47382 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47386 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47400 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47402 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47410 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:47418 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:38072 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:43:20,834] Trial 9 finished with value: 0.6 and parameters: {}. Best is trial 0 with value: 0.6.
+automl_hyperopt  | INFO:app.services.optimizer:Optimization b22d3b29-1b82-428b-b768-f0d0f0b2f636 completed
+automl_hyperopt  | INFO:     172.23.0.9:38086 - "GET /optimize/b22d3b29-1b82-428b-b768-f0d0f0b2f636 HTTP/1.1" 200 OK

@@ -17,9 +17,9 @@ pipeline {
 
         stage('Build Services') {
             steps {
-                echo 'Building Docker images...'
-                // Reconstruit les images en parallèle pour gagner du temps
-                bat 'docker-compose build --parallel'
+                echo 'Building Docker images (forcing new version)...'
+                // Utilise --no-cache pour forcer Docker à prendre le nouveau code et pas l'ancien en mémoire
+                bat 'docker-compose build --no-cache --parallel'
             }
         }
 

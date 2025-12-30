@@ -19,8 +19,12 @@ def model_selection_page():
     
     dataset_id = st.text_input(
         "Enter Dataset ID",
+        value=st.session_state.get("shared_dataset_id", ""),
         help="Paste the ID provided by the Data Preparation step"
     )
+    
+    # Sync back to shared state immediately if user edits
+    st.session_state["shared_dataset_id"] = dataset_id
     
     if dataset_id:
         # Try to load dataset from MinIO to get columns for Target selection
@@ -46,8 +50,12 @@ def model_selection_page():
                 target_col = st.selectbox(
                     "Target Column",
                     options=df.columns.tolist(),
+                    # Attempt to auto-select previous column if exists in new dataset
+                    index=df.columns.tolist().index(st.session_state["shared_target_column"]) if st.session_state["shared_target_column"] in df.columns.tolist() else 0,
                     help="Select the column you want to predict"
                 )
+                if target_col:
+                    st.session_state["shared_target_column"] = target_col
             
             with col_conf2:
                 metrics = st.multiselect(
@@ -83,7 +91,6 @@ def model_selection_page():
                                 st.session_state["rec_recommendations"] = data["models"]
                                 st.session_state["rec_selection_id"] = data["recommendation_id"]
                                 st.session_state["rec_task_type"] = data.get("task_type", "Unknown")
-                                st.session_state["last_dataset_id"] = dataset_id
                             else:
                                 st.error(f"Error: {response.text}")
                         except Exception as e:
@@ -127,6 +134,10 @@ def model_selection_page():
                                 resp = requests.post(f"{TRAINER_API_URL}/train", json=payload)
                                 if resp.status_code == 200:
                                     jid = resp.json()["batch_job_id"]
+                                    
+                                    # Store in shared state for Training Monitor
+                                    st.session_state["shared_job_id"] = jid
+                                    
                                     status.write(f"✅ Training batch started! Batch ID: `{jid}`")
                                     st.success(f"🎉 **Batch Created Successfully!**")
                                     st.markdown(f"""

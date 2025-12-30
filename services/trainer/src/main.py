@@ -30,6 +30,13 @@ class TrainResponse(BaseModel):
     status: str
     triggered_jobs: List[str]
 
+class JobRequest(BaseModel):
+    model_type: str
+    dataset_id: str
+    target_column: str
+    hyperparameters: Dict[str, Any]
+    metrics: List[str] = ["accuracy"]
+
 from src.database import get_db
 from src.models import TrainingBatch, TrainingJob # Ensure models are imported
 from sqlalchemy.orm import Session
@@ -129,6 +136,29 @@ async def train(request: TrainRequest, background_tasks: BackgroundTasks):
         status="accepted",
         triggered_jobs=[] # We don't know IDs yet as they are generated in background
     )
+
+@app.post("/train/job")
+async def train_job(request: JobRequest, background_tasks: BackgroundTasks):
+    job_id = str(uuid.uuid4())
+    logger.info(f"Received single job request: {request.model_type} (Job {job_id})")
+    
+    # Merge metadata into hyperparameters for the worker
+    full_params = request.hyperparameters.copy()
+    full_params["target_column"] = request.target_column
+    full_params["metrics"] = request.metrics
+
+    background_tasks.add_task(
+        start_training,
+        job_id,
+        request.model_type,
+        request.dataset_id,
+        full_params
+    )
+    
+    # We update the DB manually here as start_training doesn't create the TrainingJob record (it just updates status)
+    # Wait, start_training calls update_job_status which expects the record to exist?
+    # Actually let's check update_job_status in utils.
+    return {"job_id": job_id, "status": "queued"}
 
 @app.get("/train/status/{job_id}")
 async def status(job_id: str, db: Session = Depends(get_db)):

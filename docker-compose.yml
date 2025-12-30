@@ -111,6 +111,7 @@ services:
       MINIO_ENDPOINT: "minio:9000"
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
+      DEPLOYER_API_URL: "http://deployer:8080"
     depends_on:
       - data_preparer
       - model_selector
@@ -230,7 +231,7 @@ services:
     image: adminer
     container_name: automl_adminer
     ports:
-      - "8081:8080"
+      - "8090:8080"
     networks:
       - automl_network
     depends_on:
@@ -239,6 +240,51 @@ services:
       - trainer_db
       - evaluator_db
       - hyperopt_db
+      - deployer_db
+
+  # Deployer Microservice
+  deployer:
+    build:
+      context: ./services/deployer
+      dockerfile: docker/Dockerfile
+    container_name: automl_deployer
+    environment:
+      DATABASE_URL: "postgresql://user:password@deployer_db:5432/deployer_db"
+      MINIO_ENDPOINT: "minio:9000"
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+      PORT: 8080
+    ports:
+      - "8006:8080" # Flask API
+      - "8081:8081" # TorchServe Inference
+      - "8082:8082" # TorchServe Management
+    depends_on:
+      - deployer_db
+      - minio
+    volumes:
+      - ./deployments:/app/models_temp
+    networks:
+      - automl_network
+
+  # Deployer Database (Independent)
+  deployer_db:
+    image: postgres:15
+    container_name: automl_deployer_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: "deployer_db"
+    ports:
+      - "5437:5432"
+    volumes:
+      - deployer_postgres_data:/var/lib/postgresql/data
+    networks:
+      - automl_network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d deployer_db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # HyperOpt Service
   hyperopt:
@@ -287,6 +333,46 @@ services:
     networks:
       - automl_network
 
+  # NATS Messaging System
+  nats:
+    image: nats:latest
+    container_name: automl_nats
+    ports:
+      - "4222:4222"
+      - "8222:8222" # Monitor
+    networks:
+      - automl_network
+
+  # Orchestrator Microservice
+  orchestrator:
+    build:
+      context: ./services/orchestrator
+      dockerfile: docker/Dockerfile
+    container_name: automl_orchestrator
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
+      - NATS_URL=nats://nats:4222
+      - REDIS_HOST=hyperopt_redis
+      - REDIS_PORT=6379
+      - DATA_PREPARER_URL=http://data_preparer:8000
+      - MODEL_SELECTOR_URL=http://model_selector:8000
+      - TRAINER_URL=http://trainer:8000
+      - EVALUATOR_URL=http://evaluator:8000
+      - DEPLOYER_URL=http://deployer:8080
+    ports:
+      - "8007:8080"
+    depends_on:
+      - nats
+      - hyperopt_redis
+      - data_preparer
+      - model_selector
+      - trainer
+      - evaluator
+      - deployer
+    networks:
+      - automl_network
+
 volumes:
   postgres_data:
   minio_data:
@@ -294,6 +380,7 @@ volumes:
   trainer_postgres_data:
   evaluator_postgres_data:
   hyperopt_postgres_data:
+  deployer_postgres_data:
 
 
 networks:

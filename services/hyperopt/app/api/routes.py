@@ -17,6 +17,8 @@ class SearchSpace(BaseModel):
 
 class OptimizeRequest(BaseModel):
     model: str
+    dataset_id: str
+    target_column: str
     target_metric: str
     search_space: Dict[str, Any]
     n_trials: int = 20
@@ -50,6 +52,8 @@ async def optimize(request: OptimizeRequest, background_tasks: BackgroundTasks, 
         run_optimization_task,
         run_id,
         request.model,
+        request.dataset_id,
+        request.target_column,
         request.target_metric,
         request.search_space,
         request.n_trials,
@@ -64,6 +68,9 @@ async def get_run_status(run_id: str, db: Session = Depends(get_db)):
     run = db.query(HyperOptRun).filter(HyperOptRun.run_id == run_id).first()
     if not run:
         raise HTTPException(status_code=404, detail="Run not found")
+    
+    from ..db.models import HyperOptTrial
+    trials = db.query(HyperOptTrial).filter(HyperOptTrial.run_id == run_id).order_by(HyperOptTrial.trial_number).all()
         
     return {
         "run_id": run.run_id,
@@ -73,5 +80,12 @@ async def get_run_status(run_id: str, db: Session = Depends(get_db)):
         "best_score": run.best_score,
         "trials_completed": run.trials_completed,
         "created_at": run.created_at,
-        "completed_at": run.completed_at
+        "completed_at": run.completed_at,
+        "trials": [
+            {
+                "number": t.trial_number,
+                "score": t.score,
+                "params": t.params
+            } for t in trials
+        ]
     }

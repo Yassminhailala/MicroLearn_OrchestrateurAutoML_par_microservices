@@ -154,6 +154,10 @@ def data_preparation_page():
                     response = requests.post(f"{API_URL}/prepare", json=payload)
                     response.raise_for_status()
                     job_id = response.json()["job_id"]
+                    
+                    # Store in shared state IMMEDIATELY
+                    st.session_state["shared_dataset_id"] = job_id
+                    
                     status.write(f"✅ Job started (ID: `{job_id}`)")
                     
                     # Step 3: Poll for results
@@ -173,6 +177,10 @@ def data_preparation_page():
                                 obj = client.get_object(out_data["output_bucket"], out_data["output_path"])
                                 result_df = pd.read_csv(io.BytesIO(obj.read()))
                                 progress_bar.progress(1.0)
+                                
+                                # Redundant but safe: sync again
+                                st.session_state["shared_dataset_id"] = job_id
+                                
                                 status.update(
                                     label="✅ **Processing Complete!**",
                                     state="complete",

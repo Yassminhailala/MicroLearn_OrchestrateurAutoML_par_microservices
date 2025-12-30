@@ -1,0 +1,10 @@
+flask
+flask-restx
+sqlalchemy
+psycopg2-binary
+boto3
+python-dotenv
+torch-model-archiver
+torchserve
+requests
+PyYAML

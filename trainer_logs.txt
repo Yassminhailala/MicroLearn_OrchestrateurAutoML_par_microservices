@@ -1,0 +1,287 @@
+﻿automl_trainer  | INFO:     Started server process [1]
+automl_trainer  | INFO:     Waiting for application startup.
+automl_trainer  | INFO:     Application startup complete.
+automl_trainer  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+automl_trainer  | INFO:src.main:Received training request for recommendation e61a32f1-19f9-41f9-a03c-8b05472fa7f1
+automl_trainer  | INFO:     172.23.0.9:43118 - "POST /train HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Created batch record 68fa3d27-d4d3-402b-9fea-bd9f8b1203ea
+automl_trainer  | INFO:src.main:Fetching recommendations for e61a32f1-19f9-41f9-a03c-8b05472fa7f1 from http://model_selector:8000
+automl_trainer  | INFO:src.main:Triggering training for SVM Regressor (Job 16861bfd-f566-4798-b23c-f050f2d2056f)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 16861bfd-f566-4798-b23c-f050f2d2056f)
+automl_trainer  | INFO:src.trainer_logic:Auto-encoding categorical features: ['city']
+automl_trainer  | INFO:src.utils:Successfully uploaded checkpoint to MinIO: checkpoints/16861bfd-f566-4798-b23c-f050f2d2056f/model_16861bfd-f566-4798-b23c-f050f2d2056f.joblib
+automl_trainer  | INFO:src.trainer_logic:Job 16861bfd-f566-4798-b23c-f050f2d2056f (Sklearn) completed successfully
+automl_trainer  | INFO:src.main:Triggering training for RandomForest Regressor (Job 3e4431e9-da5d-4aee-b81c-627df089ffd0)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for RandomForest Regressor (Job 3e4431e9-da5d-4aee-b81c-627df089ffd0)
+automl_trainer  | INFO:src.trainer_logic:Auto-encoding categorical features: ['city']
+automl_trainer  | INFO:src.utils:Successfully uploaded checkpoint to MinIO: checkpoints/3e4431e9-da5d-4aee-b81c-627df089ffd0/model_3e4431e9-da5d-4aee-b81c-627df089ffd0.joblib
+automl_trainer  | INFO:src.trainer_logic:Job 3e4431e9-da5d-4aee-b81c-627df089ffd0 (Sklearn) completed successfully
+automl_trainer  | INFO:     172.23.0.9:45808 - "GET /train/status/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.9:44932 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:44938 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:41568 - "GET /train/status/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.9:41570 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:41574 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:41586 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:44862 - "GET /train/batches HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.9:44874 - "GET /train/status/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.11:33856 - "GET /train/status/16861bfd-f566-4798-b23c-f050f2d2056f HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.11:33868 - "GET /train/status/3e4431e9-da5d-4aee-b81c-627df089ffd0 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 746e80a7-4a0b-4ed2-bc5e-43873ab00be4)
+automl_trainer  | INFO:     172.23.0.12:60002 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 746e80a7-4a0b-4ed2-bc5e-43873ab00be4)
+automl_trainer  | ERROR:src.trainer_logic:Job 746e80a7-4a0b-4ed2-bc5e-43873ab00be4 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:60016 - "GET /train/status/746e80a7-4a0b-4ed2-bc5e-43873ab00be4 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:60028 - "GET /train/status/746e80a7-4a0b-4ed2-bc5e-43873ab00be4 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 7cbea41f-30cf-4879-8a66-4f6416acdc6a)
+automl_trainer  | INFO:     172.23.0.12:60040 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 7cbea41f-30cf-4879-8a66-4f6416acdc6a)
+automl_trainer  | ERROR:src.trainer_logic:Job 7cbea41f-30cf-4879-8a66-4f6416acdc6a failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:60054 - "GET /train/status/7cbea41f-30cf-4879-8a66-4f6416acdc6a HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:60058 - "GET /train/status/7cbea41f-30cf-4879-8a66-4f6416acdc6a HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job e44d175b-46c7-4a7b-8700-b283815aac2e)
+automl_trainer  | INFO:     172.23.0.12:60074 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job e44d175b-46c7-4a7b-8700-b283815aac2e)
+automl_trainer  | ERROR:src.trainer_logic:Job e44d175b-46c7-4a7b-8700-b283815aac2e failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:60086 - "GET /train/status/e44d175b-46c7-4a7b-8700-b283815aac2e HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:51728 - "GET /train/status/e44d175b-46c7-4a7b-8700-b283815aac2e HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:51734 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d)
+automl_trainer  | ERROR:src.trainer_logic:Job e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:51742 - "GET /train/status/e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:51756 - "GET /train/status/e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job f05644f5-6980-406a-bcca-902d5ee38210)
+automl_trainer  | INFO:     172.23.0.12:51760 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job f05644f5-6980-406a-bcca-902d5ee38210)
+automl_trainer  | ERROR:src.trainer_logic:Job f05644f5-6980-406a-bcca-902d5ee38210 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:51774 - "GET /train/status/f05644f5-6980-406a-bcca-902d5ee38210 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:51790 - "GET /train/status/f05644f5-6980-406a-bcca-902d5ee38210 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 626e0133-447e-4d80-968b-8fa641e0c6e3)
+automl_trainer  | INFO:     172.23.0.12:51796 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 626e0133-447e-4d80-968b-8fa641e0c6e3)
+automl_trainer  | ERROR:src.trainer_logic:Job 626e0133-447e-4d80-968b-8fa641e0c6e3 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:51798 - "GET /train/status/626e0133-447e-4d80-968b-8fa641e0c6e3 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:51802 - "GET /train/status/626e0133-447e-4d80-968b-8fa641e0c6e3 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2)
+automl_trainer  | INFO:     172.23.0.12:51816 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2)
+automl_trainer  | ERROR:src.trainer_logic:Job 32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:51818 - "GET /train/status/32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:52782 - "GET /train/status/32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 7c3b2410-f339-45b4-8c3f-65bf92693cdb)
+automl_trainer  | INFO:     172.23.0.12:52784 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 7c3b2410-f339-45b4-8c3f-65bf92693cdb)
+automl_trainer  | ERROR:src.trainer_logic:Job 7c3b2410-f339-45b4-8c3f-65bf92693cdb failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:52794 - "GET /train/status/7c3b2410-f339-45b4-8c3f-65bf92693cdb HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:52796 - "GET /train/status/7c3b2410-f339-45b4-8c3f-65bf92693cdb HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:52812 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job bf4c3f57-321c-43dd-ac0a-aea4115d3caf)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job bf4c3f57-321c-43dd-ac0a-aea4115d3caf)
+automl_trainer  | ERROR:src.trainer_logic:Job bf4c3f57-321c-43dd-ac0a-aea4115d3caf failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:52816 - "GET /train/status/bf4c3f57-321c-43dd-ac0a-aea4115d3caf HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:52818 - "GET /train/status/bf4c3f57-321c-43dd-ac0a-aea4115d3caf HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 89828c28-57ac-4f84-b5fc-c9a8e9796de5)
+automl_trainer  | INFO:     172.23.0.12:52830 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:52840 - "GET /train/status/89828c28-57ac-4f84-b5fc-c9a8e9796de5 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 89828c28-57ac-4f84-b5fc-c9a8e9796de5)
+automl_trainer  | ERROR:src.trainer_logic:Job 89828c28-57ac-4f84-b5fc-c9a8e9796de5 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:52846 - "GET /train/status/89828c28-57ac-4f84-b5fc-c9a8e9796de5 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job c3713a2d-c5e4-481c-bd41-8f4fb50def9e)
+automl_trainer  | INFO:     172.23.0.12:45346 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job c3713a2d-c5e4-481c-bd41-8f4fb50def9e)
+automl_trainer  | ERROR:src.trainer_logic:Job c3713a2d-c5e4-481c-bd41-8f4fb50def9e failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:45358 - "GET /train/status/c3713a2d-c5e4-481c-bd41-8f4fb50def9e HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:45372 - "GET /train/status/c3713a2d-c5e4-481c-bd41-8f4fb50def9e HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job a4d7c0f9-7b38-4734-b6ef-315878ba728a)
+automl_trainer  | INFO:     172.23.0.12:45374 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job a4d7c0f9-7b38-4734-b6ef-315878ba728a)
+automl_trainer  | ERROR:src.trainer_logic:Job a4d7c0f9-7b38-4734-b6ef-315878ba728a failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:45386 - "GET /train/status/a4d7c0f9-7b38-4734-b6ef-315878ba728a HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:45400 - "GET /train/status/a4d7c0f9-7b38-4734-b6ef-315878ba728a HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 32662d8b-0e43-4e87-93ae-9b27c7397938)
+automl_trainer  | INFO:     172.23.0.12:45412 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:45414 - "GET /train/status/32662d8b-0e43-4e87-93ae-9b27c7397938 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 32662d8b-0e43-4e87-93ae-9b27c7397938)
+automl_trainer  | ERROR:src.trainer_logic:Job 32662d8b-0e43-4e87-93ae-9b27c7397938 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:45430 - "GET /train/status/32662d8b-0e43-4e87-93ae-9b27c7397938 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 1187a17d-9c4c-49b5-8db2-e1fc36451c82)
+automl_trainer  | INFO:     172.23.0.12:45436 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 1187a17d-9c4c-49b5-8db2-e1fc36451c82)
+automl_trainer  | ERROR:src.trainer_logic:Job 1187a17d-9c4c-49b5-8db2-e1fc36451c82 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:45444 - "GET /train/status/1187a17d-9c4c-49b5-8db2-e1fc36451c82 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:41338 - "GET /train/status/1187a17d-9c4c-49b5-8db2-e1fc36451c82 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job f7ad470d-d09d-4808-bdf0-94b1c577f118)
+automl_trainer  | INFO:     172.23.0.12:41340 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job f7ad470d-d09d-4808-bdf0-94b1c577f118)
+automl_trainer  | ERROR:src.trainer_logic:Job f7ad470d-d09d-4808-bdf0-94b1c577f118 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:41344 - "GET /train/status/f7ad470d-d09d-4808-bdf0-94b1c577f118 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:41356 - "GET /train/status/f7ad470d-d09d-4808-bdf0-94b1c577f118 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 68541866-a056-4e9b-a31f-eb7575ffe537)
+automl_trainer  | INFO:     172.23.0.12:41362 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 68541866-a056-4e9b-a31f-eb7575ffe537)
+automl_trainer  | ERROR:src.trainer_logic:Job 68541866-a056-4e9b-a31f-eb7575ffe537 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:41376 - "GET /train/status/68541866-a056-4e9b-a31f-eb7575ffe537 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:41384 - "GET /train/status/68541866-a056-4e9b-a31f-eb7575ffe537 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 8726affa-090a-401b-b4c3-1487e2e61f4a)
+automl_trainer  | INFO:     172.23.0.12:41398 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 8726affa-090a-401b-b4c3-1487e2e61f4a)
+automl_trainer  | ERROR:src.trainer_logic:Job 8726affa-090a-401b-b4c3-1487e2e61f4a failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:41408 - "GET /train/status/8726affa-090a-401b-b4c3-1487e2e61f4a HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:41414 - "GET /train/status/8726affa-090a-401b-b4c3-1487e2e61f4a HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 03817e3f-b99c-48cf-9bc2-a3ef7d886c2e)
+automl_trainer  | INFO:     172.23.0.12:41418 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 03817e3f-b99c-48cf-9bc2-a3ef7d886c2e)
+automl_trainer  | INFO:     172.23.0.12:41432 - "GET /train/status/03817e3f-b99c-48cf-9bc2-a3ef7d886c2e HTTP/1.1" 200 OK
+automl_trainer  | ERROR:src.trainer_logic:Job 03817e3f-b99c-48cf-9bc2-a3ef7d886c2e failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:41434 - "GET /train/status/03817e3f-b99c-48cf-9bc2-a3ef7d886c2e HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 0449563f-d6c4-40ed-bf0f-2bf4e4289b14)
+automl_trainer  | INFO:     172.23.0.12:41442 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 0449563f-d6c4-40ed-bf0f-2bf4e4289b14)
+automl_trainer  | ERROR:src.trainer_logic:Job 0449563f-d6c4-40ed-bf0f-2bf4e4289b14 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:56072 - "GET /train/status/0449563f-d6c4-40ed-bf0f-2bf4e4289b14 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:56080 - "GET /train/status/0449563f-d6c4-40ed-bf0f-2bf4e4289b14 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1)
+automl_trainer  | INFO:     172.23.0.12:56094 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1)
+automl_trainer  | ERROR:src.trainer_logic:Job f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:56102 - "GET /train/status/f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:56112 - "GET /train/status/f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 8d01f814-9b42-4714-ba73-308f8423fcf9)
+automl_trainer  | INFO:     172.23.0.12:56126 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 8d01f814-9b42-4714-ba73-308f8423fcf9)
+automl_trainer  | ERROR:src.trainer_logic:Job 8d01f814-9b42-4714-ba73-308f8423fcf9 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:56130 - "GET /train/status/8d01f814-9b42-4714-ba73-308f8423fcf9 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:56134 - "GET /train/status/8d01f814-9b42-4714-ba73-308f8423fcf9 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 9e8bd635-c473-4e30-9ccf-6a23d75a1d0c)
+automl_trainer  | INFO:     172.23.0.12:56148 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 9e8bd635-c473-4e30-9ccf-6a23d75a1d0c)
+automl_trainer  | ERROR:src.trainer_logic:Job 9e8bd635-c473-4e30-9ccf-6a23d75a1d0c failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:56152 - "GET /train/status/9e8bd635-c473-4e30-9ccf-6a23d75a1d0c HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:56164 - "GET /train/status/9e8bd635-c473-4e30-9ccf-6a23d75a1d0c HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 25a0eaa6-38f3-45ec-bdbe-49f250ac73ff)
+automl_trainer  | INFO:     172.23.0.12:56170 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 25a0eaa6-38f3-45ec-bdbe-49f250ac73ff)
+automl_trainer  | ERROR:src.trainer_logic:Job 25a0eaa6-38f3-45ec-bdbe-49f250ac73ff failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:56174 - "GET /train/status/25a0eaa6-38f3-45ec-bdbe-49f250ac73ff HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:47130 - "GET /train/status/25a0eaa6-38f3-45ec-bdbe-49f250ac73ff HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 27cac9df-008e-4455-9513-971c62d3f704)
+automl_trainer  | INFO:     172.23.0.12:47146 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 27cac9df-008e-4455-9513-971c62d3f704)
+automl_trainer  | ERROR:src.trainer_logic:Job 27cac9df-008e-4455-9513-971c62d3f704 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:47158 - "GET /train/status/27cac9df-008e-4455-9513-971c62d3f704 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:47174 - "GET /train/status/27cac9df-008e-4455-9513-971c62d3f704 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 050a4b48-acc8-4271-a108-61b9ddbd9b1c)
+automl_trainer  | INFO:     172.23.0.12:47178 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 050a4b48-acc8-4271-a108-61b9ddbd9b1c)
+automl_trainer  | ERROR:src.trainer_logic:Job 050a4b48-acc8-4271-a108-61b9ddbd9b1c failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:47190 - "GET /train/status/050a4b48-acc8-4271-a108-61b9ddbd9b1c HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:47194 - "GET /train/status/050a4b48-acc8-4271-a108-61b9ddbd9b1c HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff)
+automl_trainer  | INFO:     172.23.0.12:47198 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff)
+automl_trainer  | ERROR:src.trainer_logic:Job dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:47204 - "GET /train/status/dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:47210 - "GET /train/status/dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:47218 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 3db88f83-df78-4f05-ae2f-0edde3565108)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 3db88f83-df78-4f05-ae2f-0edde3565108)
+automl_trainer  | ERROR:src.trainer_logic:Job 3db88f83-df78-4f05-ae2f-0edde3565108 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:47226 - "GET /train/status/3db88f83-df78-4f05-ae2f-0edde3565108 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:47236 - "GET /train/status/3db88f83-df78-4f05-ae2f-0edde3565108 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b)
+automl_trainer  | INFO:     172.23.0.12:47248 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b)
+automl_trainer  | ERROR:src.trainer_logic:Job 4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:47264 - "GET /train/status/4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:43494 - "GET /train/status/4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 6438e12a-0e1e-4bf2-8a89-0db32a70d27d)
+automl_trainer  | INFO:     172.23.0.12:43500 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 6438e12a-0e1e-4bf2-8a89-0db32a70d27d)
+automl_trainer  | ERROR:src.trainer_logic:Job 6438e12a-0e1e-4bf2-8a89-0db32a70d27d failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:43516 - "GET /train/status/6438e12a-0e1e-4bf2-8a89-0db32a70d27d HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:43518 - "GET /train/status/6438e12a-0e1e-4bf2-8a89-0db32a70d27d HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 370d4a7c-34d3-433d-8b68-48ff986fb93c)
+automl_trainer  | INFO:     172.23.0.12:43534 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:43544 - "GET /train/status/370d4a7c-34d3-433d-8b68-48ff986fb93c HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 370d4a7c-34d3-433d-8b68-48ff986fb93c)
+automl_trainer  | ERROR:src.trainer_logic:Job 370d4a7c-34d3-433d-8b68-48ff986fb93c failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:43550 - "GET /train/status/370d4a7c-34d3-433d-8b68-48ff986fb93c HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job c38ff853-767a-48ef-82f3-67861073b85b)
+automl_trainer  | INFO:     172.23.0.12:33582 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:33594 - "GET /train/status/c38ff853-767a-48ef-82f3-67861073b85b HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job c38ff853-767a-48ef-82f3-67861073b85b)
+automl_trainer  | ERROR:src.trainer_logic:Job c38ff853-767a-48ef-82f3-67861073b85b failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:33610 - "GET /train/status/c38ff853-767a-48ef-82f3-67861073b85b HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 9b6000db-1225-4ba6-bb75-9dd6d03678e9)
+automl_trainer  | INFO:     172.23.0.12:33614 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 9b6000db-1225-4ba6-bb75-9dd6d03678e9)
+automl_trainer  | ERROR:src.trainer_logic:Job 9b6000db-1225-4ba6-bb75-9dd6d03678e9 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:33622 - "GET /train/status/9b6000db-1225-4ba6-bb75-9dd6d03678e9 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:40716 - "GET /train/status/9b6000db-1225-4ba6-bb75-9dd6d03678e9 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job b15165e6-b91b-4a83-b5dc-585b3c08bb0d)
+automl_trainer  | INFO:     172.23.0.12:40718 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job b15165e6-b91b-4a83-b5dc-585b3c08bb0d)
+automl_trainer  | ERROR:src.trainer_logic:Job b15165e6-b91b-4a83-b5dc-585b3c08bb0d failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:40726 - "GET /train/status/b15165e6-b91b-4a83-b5dc-585b3c08bb0d HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:40734 - "GET /train/status/b15165e6-b91b-4a83-b5dc-585b3c08bb0d HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job b8e74699-298f-4f99-9a44-4cd6e6e73e4e)
+automl_trainer  | INFO:     172.23.0.12:40738 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:40752 - "GET /train/status/b8e74699-298f-4f99-9a44-4cd6e6e73e4e HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job b8e74699-298f-4f99-9a44-4cd6e6e73e4e)
+automl_trainer  | ERROR:src.trainer_logic:Job b8e74699-298f-4f99-9a44-4cd6e6e73e4e failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:40758 - "GET /train/status/b8e74699-298f-4f99-9a44-4cd6e6e73e4e HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 671a9e7f-abf2-4313-af55-578a432a16d4)
+automl_trainer  | INFO:     172.23.0.12:40772 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 671a9e7f-abf2-4313-af55-578a432a16d4)
+automl_trainer  | ERROR:src.trainer_logic:Job 671a9e7f-abf2-4313-af55-578a432a16d4 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:40784 - "GET /train/status/671a9e7f-abf2-4313-af55-578a432a16d4 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:40794 - "GET /train/status/671a9e7f-abf2-4313-af55-578a432a16d4 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job e882a12b-58b5-4e6a-987a-58b20ddf4e1d)
+automl_trainer  | INFO:     172.23.0.12:40798 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job e882a12b-58b5-4e6a-987a-58b20ddf4e1d)
+automl_trainer  | ERROR:src.trainer_logic:Job e882a12b-58b5-4e6a-987a-58b20ddf4e1d failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:40808 - "GET /train/status/e882a12b-58b5-4e6a-987a-58b20ddf4e1d HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:40824 - "GET /train/status/e882a12b-58b5-4e6a-987a-58b20ddf4e1d HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 58a3d55e-4f68-4ffd-a5b4-45f33116cd7f)
+automl_trainer  | INFO:     172.23.0.12:40832 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 58a3d55e-4f68-4ffd-a5b4-45f33116cd7f)
+automl_trainer  | ERROR:src.trainer_logic:Job 58a3d55e-4f68-4ffd-a5b4-45f33116cd7f failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:40838 - "GET /train/status/58a3d55e-4f68-4ffd-a5b4-45f33116cd7f HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:53156 - "GET /train/status/58a3d55e-4f68-4ffd-a5b4-45f33116cd7f HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 7085d5c5-3980-4901-ba3a-1d70c97839a3)
+automl_trainer  | INFO:     172.23.0.12:53172 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 7085d5c5-3980-4901-ba3a-1d70c97839a3)
+automl_trainer  | ERROR:src.trainer_logic:Job 7085d5c5-3980-4901-ba3a-1d70c97839a3 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:53178 - "GET /train/status/7085d5c5-3980-4901-ba3a-1d70c97839a3 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:53184 - "GET /train/status/7085d5c5-3980-4901-ba3a-1d70c97839a3 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:53190 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 5e7c2d48-9f9f-407c-91c2-a169b623d4cd)
+automl_trainer  | INFO:     172.23.0.12:53194 - "GET /train/status/5e7c2d48-9f9f-407c-91c2-a169b623d4cd HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 5e7c2d48-9f9f-407c-91c2-a169b623d4cd)
+automl_trainer  | ERROR:src.trainer_logic:Job 5e7c2d48-9f9f-407c-91c2-a169b623d4cd failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:53208 - "GET /train/status/5e7c2d48-9f9f-407c-91c2-a169b623d4cd HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job b12bdfa2-8948-4e33-b982-52e6adf47cf9)
+automl_trainer  | INFO:     172.23.0.12:53224 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job b12bdfa2-8948-4e33-b982-52e6adf47cf9)
+automl_trainer  | ERROR:src.trainer_logic:Job b12bdfa2-8948-4e33-b982-52e6adf47cf9 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:53228 - "GET /train/status/b12bdfa2-8948-4e33-b982-52e6adf47cf9 HTTP/1.1" 404 Not Found
+automl_trainer  | INFO:     172.23.0.12:53236 - "GET /train/status/b12bdfa2-8948-4e33-b982-52e6adf47cf9 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job cbb29166-cad7-4d66-bef2-e1e6413b745e)
+automl_trainer  | INFO:     172.23.0.12:53252 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job cbb29166-cad7-4d66-bef2-e1e6413b745e)
+automl_trainer  | ERROR:src.trainer_logic:Job cbb29166-cad7-4d66-bef2-e1e6413b745e failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:53258 - "GET /train/status/cbb29166-cad7-4d66-bef2-e1e6413b745e HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:53266 - "GET /train/status/cbb29166-cad7-4d66-bef2-e1e6413b745e HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:53270 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 7bab326f-4327-4ba7-a09a-83688b11e453)
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 7bab326f-4327-4ba7-a09a-83688b11e453)
+automl_trainer  | ERROR:src.trainer_logic:Job 7bab326f-4327-4ba7-a09a-83688b11e453 failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:53274 - "GET /train/status/7bab326f-4327-4ba7-a09a-83688b11e453 HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:43274 - "GET /train/status/7bab326f-4327-4ba7-a09a-83688b11e453 HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.main:Received single job request: SVM Regressor (Job 48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb)
+automl_trainer  | INFO:     172.23.0.12:43276 - "POST /train/job HTTP/1.1" 200 OK
+automl_trainer  | INFO:src.trainer_logic:Starting Scikit-Learn training for SVM Regressor (Job 48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb)
+automl_trainer  | ERROR:src.trainer_logic:Job 48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb failed: Missing data_id or target_column
+automl_trainer  | INFO:     172.23.0.12:43290 - "GET /train/status/48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb HTTP/1.1" 200 OK
+automl_trainer  | INFO:     172.23.0.12:43294 - "GET /train/status/48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb HTTP/1.1" 200 OK

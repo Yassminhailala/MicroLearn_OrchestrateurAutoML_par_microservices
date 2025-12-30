@@ -1,0 +1,129 @@
+﻿automl_hyperopt  | INFO:     Started server process [1]
+automl_hyperopt  | INFO:     Waiting for application startup.
+automl_hyperopt  | INFO:app.main:Database tables created successfully
+automl_hyperopt  | INFO:app.main:HyperOpt service starting up...
+automl_hyperopt  | INFO:     Application startup complete.
+automl_hyperopt  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+automl_hyperopt  | INFO:app.services.redis_queue:Job eb0e6b9b-7494-45dd-932a-bfd9ffd183a5 queued in Redis
+automl_hyperopt  | INFO:     172.23.0.9:51740 - "POST /optimize HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:16:15,869] A new study created in memory with name: no-name-f6c2658c-2eef-4260-a2c6-9510aa335277
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 746e80a7-4a0b-4ed2-bc5e-43873ab00be4 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:18,017] Trial 0 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:51752 - "GET /optimize/eb0e6b9b-7494-45dd-932a-bfd9ffd183a5 HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 7cbea41f-30cf-4879-8a66-4f6416acdc6a failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:20,091] Trial 1 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job e44d175b-46c7-4a7b-8700-b283815aac2e failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:22,191] Trial 2 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job e91fb44d-5985-4fd9-8ba2-b3ffaa621b3d failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:24,333] Trial 3 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job f05644f5-6980-406a-bcca-902d5ee38210 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:26,511] Trial 4 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 626e0133-447e-4d80-968b-8fa641e0c6e3 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:28,575] Trial 5 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 32705e84-73cd-4d4d-a7d4-6ef2fc2c93b2 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:30,633] Trial 6 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 7c3b2410-f339-45b4-8c3f-65bf92693cdb failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:32,694] Trial 7 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job bf4c3f57-321c-43dd-ac0a-aea4115d3caf failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:34,748] Trial 8 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 89828c28-57ac-4f84-b5fc-c9a8e9796de5 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:36,805] Trial 9 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:app.services.optimizer:Optimization eb0e6b9b-7494-45dd-932a-bfd9ffd183a5 completed
+automl_hyperopt  | INFO:app.services.redis_queue:Job 3a1b86fc-59db-4d8d-ab25-804cd08e4672 queued in Redis
+automl_hyperopt  | INFO:     172.23.0.9:51416 - "POST /optimize HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:16:43,795] A new study created in memory with name: no-name-5dad6ec9-4c65-4f2b-960a-2f314361f94f
+automl_hyperopt  | INFO:     172.23.0.9:51424 - "GET /optimize/3a1b86fc-59db-4d8d-ab25-804cd08e4672 HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job c3713a2d-c5e4-481c-bd41-8f4fb50def9e failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:45,847] Trial 0 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job a4d7c0f9-7b38-4734-b6ef-315878ba728a failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:47,935] Trial 1 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 32662d8b-0e43-4e87-93ae-9b27c7397938 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:49,985] Trial 2 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 1187a17d-9c4c-49b5-8db2-e1fc36451c82 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:52,022] Trial 3 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job f7ad470d-d09d-4808-bdf0-94b1c577f118 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:54,088] Trial 4 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 68541866-a056-4e9b-a31f-eb7575ffe537 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:56,144] Trial 5 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 8726affa-090a-401b-b4c3-1487e2e61f4a failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:16:58,189] Trial 6 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 03817e3f-b99c-48cf-9bc2-a3ef7d886c2e failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:00,273] Trial 7 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 0449563f-d6c4-40ed-bf0f-2bf4e4289b14 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:02,339] Trial 8 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job f9fcd1a1-bb8a-4a9c-a18e-bf02b535fde1 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:04,399] Trial 9 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 8d01f814-9b42-4714-ba73-308f8423fcf9 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:06,436] Trial 10 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 9e8bd635-c473-4e30-9ccf-6a23d75a1d0c failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:08,526] Trial 11 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 25a0eaa6-38f3-45ec-bdbe-49f250ac73ff failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:10,598] Trial 12 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 27cac9df-008e-4455-9513-971c62d3f704 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:12,658] Trial 13 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 050a4b48-acc8-4271-a108-61b9ddbd9b1c failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:14,744] Trial 14 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job dc1fbd8a-e89c-4fb1-bba1-0a0f1c63dfff failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:16,802] Trial 15 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 3db88f83-df78-4f05-ae2f-0edde3565108 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:18,863] Trial 16 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 4a9243c0-dd07-49ef-8936-ebe5e3bb8f4b failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:20,920] Trial 17 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 6438e12a-0e1e-4bf2-8a89-0db32a70d27d failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:22,955] Trial 18 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 370d4a7c-34d3-433d-8b68-48ff986fb93c failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:17:25,010] Trial 19 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:app.services.optimizer:Optimization 3a1b86fc-59db-4d8d-ab25-804cd08e4672 completed
+automl_hyperopt  | INFO:app.services.redis_queue:Job d5dfe48c-5839-4a5b-b639-7b53a086f43d queued in Redis
+automl_hyperopt  | INFO:     172.23.0.9:52710 - "POST /optimize HTTP/1.1" 200 OK
+automl_hyperopt  | [I 2025-12-27 17:21:36,242] A new study created in memory with name: no-name-dd8711f6-9adc-4f97-b1bc-818f7d1bd0b0
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job c38ff853-767a-48ef-82f3-67861073b85b failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:38,408] Trial 0 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:52722 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 9b6000db-1225-4ba6-bb75-9dd6d03678e9 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:40,503] Trial 1 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job b15165e6-b91b-4a83-b5dc-585b3c08bb0d failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:42,563] Trial 2 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job b8e74699-298f-4f99-9a44-4cd6e6e73e4e failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:44,634] Trial 3 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 671a9e7f-abf2-4313-af55-578a432a16d4 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:46,702] Trial 4 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job e882a12b-58b5-4e6a-987a-58b20ddf4e1d failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:48,772] Trial 5 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 58a3d55e-4f68-4ffd-a5b4-45f33116cd7f failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:50,820] Trial 6 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 7085d5c5-3980-4901-ba3a-1d70c97839a3 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:52,884] Trial 7 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 5e7c2d48-9f9f-407c-91c2-a169b623d4cd failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:54,974] Trial 8 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:36002 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job b12bdfa2-8948-4e33-b982-52e6adf47cf9 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:57,031] Trial 9 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:36016 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job cbb29166-cad7-4d66-bef2-e1e6413b745e failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:21:59,080] Trial 10 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:36024 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59914 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59926 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 7bab326f-4327-4ba7-a09a-83688b11e453 failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:22:01,143] Trial 11 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:     172.23.0.9:59932 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59936 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59944 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59950 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59964 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59968 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59978 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:59984 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | ERROR:app.services.optimizer:Trainer job 48ffb4ac-bfd3-4a52-a033-6a2d7ca642cb failed: Missing data_id or target_column
+automl_hyperopt  | [I 2025-12-27 17:22:03,211] Trial 12 finished with value: 0.0 and parameters: {}. Best is trial 0 with value: 0.0.
+automl_hyperopt  | INFO:app.services.optimizer:Optimization d5dfe48c-5839-4a5b-b639-7b53a086f43d completed
+automl_hyperopt  | INFO:     172.23.0.9:59986 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:56440 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:56446 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:56448 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:56452 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:56456 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:33016 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:33030 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK
+automl_hyperopt  | INFO:     172.23.0.9:33038 - "GET /optimize/d5dfe48c-5839-4a5b-b639-7b53a086f43d HTTP/1.1" 200 OK

@@ -1,0 +1,37 @@
+﻿automl_evaluator  | INFO:     Started server process [1]
+automl_evaluator  | INFO:     Waiting for application startup.
+automl_evaluator  | INFO:     Application startup complete.
+automl_evaluator  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+automl_evaluator  | INFO:     172.23.0.9:43042 - "GET /compare/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea?ranking_metric=f1 HTTP/1.1" 404 Not Found
+automl_evaluator  | INFO:     172.23.0.9:52704 - "GET /compare/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea?ranking_metric=f1 HTTP/1.1" 404 Not Found
+automl_evaluator  | INFO:     172.23.0.9:52708 - "GET /compare/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea?ranking_metric=rmse HTTP/1.1" 404 Not Found
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/16861bfd-f566-4798-b23c-f050f2d2056f
+automl_evaluator  | INFO:src.main:Received metadata for 16861bfd-f566-4798-b23c-f050f2d2056f: {'status': 'completed', 'model_type': 'SVM Regressor', 'data_id': '83710008-d613-4b34-96f2-3bb04af4694e', 'target_column': 'salary', 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for 16861bfd-f566-4798-b23c-f050f2d2056f: dataset_id=83710008-d613-4b34-96f2-3bb04af4694e, target_column=salary
+automl_evaluator  | INFO:src.main:Creating job eccc4ffc-5918-40c6-b2f9-b65850bd23ec for model 16861bfd-f566-4798-b23c-f050f2d2056f with dataset 83710008-d613-4b34-96f2-3bb04af4694e
+automl_evaluator  | INFO:src.main:Fetching metadata from: http://trainer:8000/train/status/3e4431e9-da5d-4aee-b81c-627df089ffd0
+automl_evaluator  | INFO:src.main:Received metadata for 3e4431e9-da5d-4aee-b81c-627df089ffd0: {'status': 'completed', 'model_type': 'RandomForest Regressor', 'data_id': '83710008-d613-4b34-96f2-3bb04af4694e', 'target_column': 'salary', 'error': None}
+automl_evaluator  | INFO:src.main:Final mapping for 3e4431e9-da5d-4aee-b81c-627df089ffd0: dataset_id=83710008-d613-4b34-96f2-3bb04af4694e, target_column=salary
+automl_evaluator  | INFO:src.main:Creating job 3319a068-1d21-447f-aab9-564878c3f902 for model 3e4431e9-da5d-4aee-b81c-627df089ffd0 with dataset 83710008-d613-4b34-96f2-3bb04af4694e
+automl_evaluator  | INFO:     172.23.0.9:50534 - "POST /evaluate HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job eccc4ffc-5918-40c6-b2f9-b65850bd23ec ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=68fa3d27-d4d3-402b-9fea-bd9f8b1203ea, model=16861bfd-f566-4798-b23c-f050f2d2056f, dataset=83710008-d613-4b34-96f2-3bb04af4694e, target=salary
+automl_evaluator  | INFO:src.evaluator_logic:Job eccc4ffc-5918-40c6-b2f9-b65850bd23ec status updated to running
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: 83710008-d613-4b34-96f2-3bb04af4694e
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: 16861bfd-f566-4798-b23c-f050f2d2056f
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job 16861bfd-f566-4798-b23c-f050f2d2056f
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | INFO:     172.23.0.9:50538 - "GET /experiment/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea/status HTTP/1.1" 200 OK
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation eccc4ffc-5918-40c6-b2f9-b65850bd23ec completed successfully.
+automl_evaluator  | INFO:src.evaluator_logic:--- Starting background evaluation for job 3319a068-1d21-447f-aab9-564878c3f902 ---
+automl_evaluator  | INFO:src.evaluator_logic:Context: experiment=68fa3d27-d4d3-402b-9fea-bd9f8b1203ea, model=3e4431e9-da5d-4aee-b81c-627df089ffd0, dataset=83710008-d613-4b34-96f2-3bb04af4694e, target=salary
+automl_evaluator  | INFO:src.evaluator_logic:Job 3319a068-1d21-447f-aab9-564878c3f902 status updated to running
+automl_evaluator  | INFO:src.evaluator_logic:Loading data for dataset_id: 83710008-d613-4b34-96f2-3bb04af4694e
+automl_evaluator  | INFO:src.evaluator_logic:Data loaded successfully. Shape: (5, 3)
+automl_evaluator  | INFO:src.evaluator_logic:Loading model for model_id: 3e4431e9-da5d-4aee-b81c-627df089ffd0
+automl_evaluator  | INFO:src.evaluator_logic:Loaded sklearn model for job 3e4431e9-da5d-4aee-b81c-627df089ffd0
+automl_evaluator  | INFO:src.evaluator_logic:Model loaded successfully.
+automl_evaluator  | INFO:src.evaluator_logic:Evaluation 3319a068-1d21-447f-aab9-564878c3f902 completed successfully.
+automl_evaluator  | INFO:     172.23.0.9:50542 - "GET /experiment/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea/status HTTP/1.1" 200 OK
+automl_evaluator  | INFO:     172.23.0.9:50544 - "GET /compare/68fa3d27-d4d3-402b-9fea-bd9f8b1203ea?ranking_metric=rmse HTTP/1.1" 200 OK

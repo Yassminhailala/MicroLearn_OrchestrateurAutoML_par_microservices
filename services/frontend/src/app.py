@@ -12,6 +12,7 @@ from views.model_selection import model_selection_page
 from views.hyperopt import hyperopt_page
 from views.model_training import model_training_page
 from views.model_evaluation import model_evaluation_page
+from views.model_deployment import model_deployment_page
 
 st.set_page_config(page_title="AutoML Platform", layout="wide", page_icon="🤖")
 
@@ -270,7 +271,18 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Sidebar Navigation
+# Initialize Session State (Top Level - Shared across all views)
+# We use 'shared_' prefix for persistent data to avoid conflicts with widget keys
+for key in ["shared_dataset_id", "shared_target_column", "shared_job_id", "shared_model_id"]:
+    if key not in st.session_state:
+        st.session_state[key] = ""
+
+if "last_dataset_id" not in st.session_state: st.session_state["last_dataset_id"] = ""
+if "last_target_column" not in st.session_state: st.session_state["last_target_column"] = ""
+if "current_job_id" not in st.session_state: st.session_state["current_job_id"] = ""
+if "last_trained_model_id" not in st.session_state: st.session_state["last_trained_model_id"] = ""
+
+# Navigation Logic
 with st.sidebar:
     st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
     
@@ -287,10 +299,31 @@ with st.sidebar:
     # Navigation
     page_type = st.radio(
         "Navigation",
-        ["📊 Data Preparation", "🤖 Model Selection", "🚀 Model Training", "📈 Model Evaluation", "🧪 HyperOpt"],
+        ["📊 Data Preparation", "🤖 Model Selection", "🚀 Model Training", "📈 Model Evaluation", "🧪 HyperOpt", "📦 Model Deployment"],
         key="navigation"
     )
     
+    # Context Monitor (Always visible breadcrumb)
+    st.markdown("---")
+    st.markdown("#### 📋 Session Context")
+    
+    # Display and allow quick copying/checking
+    if st.session_state.get("shared_dataset_id"):
+        st.caption("Active Dataset")
+        st.code(st.session_state["shared_dataset_id"], language="text")
+    
+    if st.session_state.get("shared_target_column"):
+        st.caption("Target Column")
+        st.code(st.session_state["shared_target_column"], language="text")
+
+    if st.session_state.get("shared_job_id"):
+        st.caption("Active Training Job")
+        st.code(st.session_state["shared_job_id"], language="text")
+        
+    if st.session_state.get("shared_model_id"):
+        st.caption("Ready Model")
+        st.code(st.session_state["shared_model_id"], language="text")
+
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Info section
@@ -308,15 +341,16 @@ with st.sidebar:
 
 
 # Main app logic
-if __name__ == "__main__":
-    # Route to correct page
-    if "Data Preparation" in page_type:
-        data_preparation_page()
-    elif "Model Selection" in page_type:
-        model_selection_page()
-    elif "Model Training" in page_type:
-        model_training_page()
-    elif "Model Evaluation" in page_type:
-        model_evaluation_page()
-    elif "HyperOpt" in page_type:
-        hyperopt_page()
+# Main Routing (No guard for maximum compatibility)
+if "Data Preparation" in page_type:
+    data_preparation_page()
+elif "Model Selection" in page_type:
+    model_selection_page()
+elif "Model Training" in page_type:
+    model_training_page()
+elif "Model Evaluation" in page_type:
+    model_evaluation_page()
+elif "HyperOpt" in page_type:
+    hyperopt_page()
+elif "Model Deployment" in page_type:
+    model_deployment_page()
