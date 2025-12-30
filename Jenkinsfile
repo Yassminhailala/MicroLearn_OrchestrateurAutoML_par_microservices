@@ -25,8 +25,12 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                echo 'Stopping previous version...'
-                // Arrête les conteneurs existants pour éviter les conflits de noms
+                echo 'Cleaning up potential conflicts...'
+                // Force remove containers by specific name to handle conflicts from other project contexts
+                // Ignore errors (|| exit 0) if containers don't exist
+                bat 'docker rm -f automl_postgres automl_minio automl_data_preparer automl_model_selector automl_model_selector_db automl_frontend automl_mlflow automl_trainer automl_trainer_db automl_evaluator automl_evaluator_db automl_adminer automl_deployer automl_deployer_db automl_hyperopt automl_hyperopt_db automl_hyperopt_redis automl_nats automl_orchestrator || exit 0'
+                
+                // Also run standard down just in case
                 bat 'docker-compose down'
 
                 echo 'Launching application...'
