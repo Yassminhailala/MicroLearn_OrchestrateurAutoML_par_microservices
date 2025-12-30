@@ -4,6 +4,10 @@ A powerful, modular, and distributed AutoML platform built with a microservices 
 
 ---
 
+## MicroLearn_OrchestrateurAutoML_par_microservices
+**Note:** This project is currently being integrated with a Jenkins CI/CD pipeline.
+*Last Trigger:* Retry build for network check.
+
 ## 🏗️ Architecture Overview
 
 The platform is designed around independent microservices communicating via REST APIs and event-driven patterns.
