@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Building Docker images...'
                 // Reconstruit les images en parallèle pour gagner du temps
-                sh 'docker-compose build --parallel'
+                bat 'docker-compose build --parallel'
             }
         }
 
@@ -27,10 +27,10 @@ pipeline {
             steps {
                 echo 'Launching application...'
                 // Relance les conteneurs en mode détaché (Run)
-                sh 'docker-compose up -d'
+                bat 'docker-compose up -d'
                 
                 echo 'Verifying application status...'
-                sh 'docker-compose ps'
+                bat 'docker-compose ps'
             }
         }
         
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo 'Cleaning up unused images...'
                 // Nettoie les images "dangling" pour économiser de l'espace disque
-                sh 'docker image prune -f'
+                bat 'docker image prune -f'
             }
         }
     }
