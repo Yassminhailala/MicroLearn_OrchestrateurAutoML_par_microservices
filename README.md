@@ -1,4 +1,4 @@
-🤖 Distributed AutoML Platform
+ Distributed AutoML Platform
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 A powerful, modular, and distributed AutoML platform built on a microservices architecture.
 This platform enables users to upload datasets, receive AI-driven model recommendations, perform automated hyperparameter optimization, and deploy models as production-ready REST APIs.
