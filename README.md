@@ -4,6 +4,11 @@ A powerful, modular, and distributed AutoML platform built on a microservices ar
 This platform enables users to upload datasets, receive AI-driven model recommendations, perform automated hyperparameter optimization, and deploy models as production-ready REST APIs.
 The system is designed with scalability, reproducibility, and MLOps best practices in mind.
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
+
+About MicroLearn
+
+MicroLearn is a modular and scalable AutoML platform built on microservices. It simplifies ML workflows by enabling parallel model training, hyperparameter optimization, and reproducible experiments with real-time dashboards.
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
 Why This Project Exists
 
 Most AutoML tools are either:
@@ -115,6 +120,14 @@ Diagramme BPMN :
 <img width="1553" height="824" alt="image" src="https://github.com/user-attachments/assets/d90c51af-0708-431f-bf67-65b70e9d0b21" />
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
+
+ Future Improvements
+
+- Real-time notifications for training jobs
+- Integration with cloud services (AWS, GCP)
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
+
 
 Video de simulation :
 https://youtu.be/SE2k13j0OL8?si=JzJVKHaA2Ls_DdfA
