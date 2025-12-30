@@ -32,7 +32,7 @@ The result is a microservices-based AutoML platform focused on:
 -Reproducibility
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
-# Technology Stack
+# 🛠 Technology Stack
 # Core Technologies
 
 -Backend: Python (Flask, PyTorch, Scikit-learn, Ray)
