@@ -25,6 +25,10 @@ pipeline {
 
         stage('Run Application') {
             steps {
+                echo 'Stopping previous version...'
+                // Arrête les conteneurs existants pour éviter les conflits de noms
+                bat 'docker-compose down'
+
                 echo 'Launching application...'
                 // Relance les conteneurs en mode détaché (Run)
                 bat 'docker-compose up -d'
