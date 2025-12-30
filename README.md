@@ -11,7 +11,7 @@ MicroLearn is a modular and scalable AutoML platform built on microservices. It 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 # Why This Project Exists
 
-# Most AutoML tools are either:
+ Most AutoML tools are either:
 
 -Monolithic and hard to scale
 
