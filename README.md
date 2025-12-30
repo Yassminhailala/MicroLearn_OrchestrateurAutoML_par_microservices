@@ -73,6 +73,9 @@ cd distributed-automl-platform
 Launch all services:
 docker-compose up -d --build
 
+![WhatsApp Image 2025-12-30 at 16 35 11](https://github.com/user-attachments/assets/2b748c37-fd71-4cfc-ae61-78307a6794c3)
+
+
 Access the frontend:
 http://localhost:8501
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
