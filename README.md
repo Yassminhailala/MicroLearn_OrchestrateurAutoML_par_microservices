@@ -27,7 +27,7 @@ The result is a microservices-based AutoML platform focused on:
 -Reproducibility
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
-🛠️ Technology Stack
+ Technology Stack
 Core Technologies
 
 -Backend: Python (Flask, PyTorch, Scikit-learn, Ray)
@@ -72,39 +72,39 @@ Access the frontend:
 http://localhost:8501
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
-📂 Project Structure:
+ Project Structure:
 
 
 <img width="654" height="316" alt="image" src="https://github.com/user-attachments/assets/5f63da75-c426-491a-81b8-6c5933e1b574" />
 
 ________________________________________________________________________________________________________________________________________________________________________________________
 
-🔄 Automated Workflow
+ Automated Workflow
 The platform provides a fully automated data and model flow — no manual ID copying between steps.
 
-📊 Data Preparation
+ Data Preparation
 Upload a CSV dataset.
 A unique Dataset ID is generated and automatically propagated across services.
 
-🤖 Model Selection
+ Model Selection
 Select the target column.
 The system recommends the most suitable models and launches a batch training job.
 
-🚀 Training Monitor
+ Training Monitor
 Track training jobs in real time.
 Model artifacts are stored in MinIO and logged in MLflow.
 
-📈 Model Evaluation
+ Model Evaluation
 Compare trained models through interactive charts and metrics.
 Selecting a model prepares it for deployment.
 
-🧪 Hyperparameter Optimization
+ Hyperparameter Optimization
 Fine-tune the selected model using advanced optimization strategies.
 
-📦 Model Deployment
+ Model Deployment
 Deploy the best model in one click as a TorchServe REST API.
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
-🏗️ Architecture Overview!
+ Architecture Overview!
 
 <img width="764" height="444" alt="Arch1" src="https://github.com/user-attachments/assets/8ab13945-345a-4297-b7cc-c20f34ca990e" />
 
