@@ -57,9 +57,10 @@ Core Technologies
 _____________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Jenkins
-
-![WhatsApp Image 2025-12-30 at 16 54 17](https://github.com/user-attachments/assets/a28a538a-109c-4b09-bd36-ec3333023ccd)
+Le projet intègre un pipeline CI/CD automatisé via Jenkins, assurant la validation, le build et le déploiement continu de l'architecture microservices
 ![WhatsApp Image 2025-12-30 at 17 51 38](https://github.com/user-attachments/assets/0d587a69-36a3-4223-8fe9-68f36dcda27a)
+
+Resultat du lancement automatisé
 ![WhatsApp Image 2025-12-30 at 17 52 57](https://github.com/user-attachments/assets/09e9face-431b-40df-af28-d9121ce7e73f)
 
 
